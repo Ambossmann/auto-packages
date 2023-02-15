@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Read this before creating packages: https://docs.chocolatey.org/en-us/create/create-packages -->
+<!-- It is especially important to read the above link to understand additional requirements when publishing packages to the community feed aka dot org (https://community.chocolatey.org/packages). -->
+
+<!-- Test your packages in a test environment: https://github.com/chocolatey/chocolatey-test-environment -->
+
+<!--
+This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Reference. Chocolatey uses a special version of NuGet.Core that allows us to do more than was initially possible. As such there are certain things to be aware of:
+
+* the package xmlns schema url may cause issues with nuget.exe
+* Any of the following elements can ONLY be used by choco tools - projectSourceUrl, docsUrl, mailingListUrl, bugTrackerUrl, packageSourceUrl, provides, conflicts, replaces
+* nuget.exe can still install packages with those elements but they are ignored. Any authoring tools or commands will error on those elements
+-->
+
+<!-- You can embed software files directly into packages, as long as you are not bound by distribution rights. -->
+<!-- * If you are an organization making private packages, you probably have no issues here -->
+<!-- * If you are releasing to the community feed, you need to consider distribution rights. -->
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>opennbs</id>
+    <version>3.10.0</version>
+    <packageSourceUrl>https://github.com/Ambossmann/auto-packages/tree/delivery/choco/opennbs</packageSourceUrl>
+    <owners>Amboss_Mann</owners>
+    <!-- ============================== -->
+    <title>Open Note Block Studio</title>
+    <authors>David Norgren, HielkeMinecraft, ShinkoNet, Bentroen, chenxi050402, LeakyJAZZ</authors>
+    <projectUrl>https://opennbs.org/</projectUrl>
+    <iconUrl>https://rawcdn.githack.com/Ambossmann/auto-packages/377f3e95017ba648ac7da919738a812e46cc07b9/icons/OpenNBS.png</iconUrl>
+    <licenseUrl>https://github.com/OpenNBS/OpenNoteBlockStudio/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/OpenNBS/OpenNoteBlockStudio</projectSourceUrl>
+    <bugTrackerUrl>https://github.com/OpenNBS/OpenNoteBlockStudio/issues</bugTrackerUrl>
+    <tags>opennbs music minecraft</tags>
+    <summary>An open-source Minecraft music maker.</summary>
+    <description>
+An open source continuation of Minecraft Note Block Studio with exciting new features!
+
+## Features
+- Construct note block songs in a user-friendly interface
+- Convert MIDI files into note block music
+- Import your creations into your Minecraft world
+- Export your creations into a datapack so you can play them without building them
+- Export your songs to a variety of common sound file formats
+- Supports all Minecraft note block instruments
+- Datapack and sound file export allow stereo sound for maximum immersion
+- Support for custom instruments
+    </description>
+    <releaseNotes>https://opennbs.org/changelog</releaseNotes>
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
