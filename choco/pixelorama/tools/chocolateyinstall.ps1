@@ -1,16 +1,16 @@
 $ErrorActionPreference = 'Stop'
 
-$version='v0.11.2'
+$version='v0.11.3'
 
 $newestRelease = 'https://github.com/Orama-Interactive/Pixelorama/releases/download/' + $version
 
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $url = $newestRelease + '/Pixelorama.Windows-32bit.zip'
-$checksum = '23A97F902B3D38395CC92EC493E36E0E161DE7326D6EEB77DBBC4FD353923C99'
+$checksum = '080828364FB1C731EF28913D3461E0F709710779955189EB11CD77B9685E3A37'
 
 $url64bit = $newestRelease + '/Pixelorama.Windows-64bit.zip'
-$checksum64 = 'C80144086C263BD8CEF6B0C0E76F43B18E229E3F12CCF37C8B328DFF9ABCC729'
+$checksum64 = 'AC0F27DF7AD14D8AA19AD7608B4D6506D189391E7CED2081A9D06FF61E3E1A67'
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
